@@ -1,10 +1,8 @@
-const Education = () => {
+const Education = ({ headerTitle, description }) => {
     return (
         <div>
-            <h2>Education</h2>
-            <p>
-                I am currently pursuing a degree in Web and Mobile Application Development at MCC.
-            </p>
+            <h2>{headerTitle}</h2>
+            <p>{description}</p>
         </div>
     );
 };

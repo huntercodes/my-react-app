@@ -1,16 +1,14 @@
-import genericPhoto from './genericPhoto.jpg'
-
-const PersonalInfo = () => {
+const PersonalInfo = ({ headerTitle, name, photo, description }) => {
     return (
         <div>
-            <h2>Personal Information</h2>
-            <h3>Hunter Downey</h3>
-            <p>
-                <img src={genericPhoto} alt="Hunter Downey" width="150"/>
-            </p>
-            <p>
-                I love my family, my dog, and my friends.
-            </p>
+            <h2>{headerTitle}</h2>
+            <h3>{name}</h3>
+            <img
+                src={photo.me}
+                alt={"photo of " + name}
+                width={photo.width}
+            />
+            <p>{description}</p>
         </div>
     );
 };

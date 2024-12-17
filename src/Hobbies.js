@@ -1,10 +1,8 @@
-const Hobbies = () => {
+const Hobbies = ({ headerTitle, description }) => {
     return (
         <div>
-            <h2>Hobbies</h2>
-            <p>
-                I enjoy playing guitar, golfing, and video games. In the future, I would like to explore hiking and climbing.
-            </p>
+            <h2>{headerTitle}</h2>
+            <p>{description}</p>
         </div>
     );
 };
