@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import logoINFO from './logoINFO.png';
 import genericPhoto from './genericPhoto.jpg';
 import './App.css';
+import React from 'react';
+import Goals from './Goals';
 import PersonalInfo from './PersonalInfo';
 import Education from './Education';
 import Hobbies from './Hobbies';
@@ -23,6 +25,12 @@ function App() {
         <Hobbies
           headerTitle="Hobbies"
           description="I enjoy playing guitar, golfing, and video games. In the future, I would like to explore hiking and climbing."
+        />
+        <Goals
+          headerTitle="Try Skydiving"
+          description="I am setting a goal to go skydiving, as free fall is an experience I have always wanted to feel."
+          suggestedEntry="Put a top goal here."
+          buttonLabel="Add"
         />
       </div>
       <header className="App-header">
