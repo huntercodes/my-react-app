@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
+import List from './List';
 
-function Goals({ headerTitle, description, suggestedEntry, buttonLabel }) {
-    const [myGoal, setMyGoal] = useState();
-
-    const handleClick = () => {
-        const inputGoal = document.getElementById("goal").value;
-        setMyGoal(inputGoal);
-    };
-
+const Goals = ({ suggestedEntry, buttonLabel }) => {
     return (
         <div>
-            <h2>{headerTitle}</h2>
-            <h3>{myGoal}</h3>
-            <p>{description}</p>
-            <input id="goal" name="goal" placeholder={suggestedEntry}></input>
-            <button onClick={handleClick}>{buttonLabel}</button>
+            <h2>Goals</h2>
+            <p>Set your goals!</p>
+            <List
+                placeholderText={suggestedEntry}
+                buttonText={buttonLabel}
+                description="Weekly Goals!"
+            />
         </div>
     );
-}
+};
 
 export default Goals;

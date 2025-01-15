@@ -27,10 +27,8 @@ function App() {
           description="I enjoy playing guitar, golfing, and video games. In the future, I would like to explore hiking and climbing."
         />
         <Goals
-          headerTitle="Try Skydiving"
-          description="I am setting a goal to go skydiving, as free fall is an experience I have always wanted to feel."
           suggestedEntry="Put a top goal here."
-          buttonLabel="Add"
+          buttonLabel="Add Goal"
         />
       </div>
       <header className="App-header">
