@@ -7,9 +7,13 @@ const Goals = ({ suggestedEntry, buttonLabel }) => {
             <h2>Goals</h2>
             <p>Set your goals!</p>
             <List
+                headerTitle="Weekly Goals"
                 placeholderText={suggestedEntry}
                 buttonText={buttonLabel}
-                description="Weekly Goals!"
+                clearButtonText="Clear Goals"
+                description="Track your goals!"
+                emptyAddError="Please enter a goal before attempting to add to the list."
+                emptyClearError="No goals to clear, the list is already empty."
             />
         </div>
     );
