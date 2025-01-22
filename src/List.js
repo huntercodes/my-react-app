@@ -18,6 +18,13 @@ const List = ({
         listItems: [],
     });
 
+    // effect for scrolling to the last item when an item is added to the list
+    useEffect(() => {
+        if (lastItemRef.current){
+            lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [listObject.listEntries]);
+
     const addToListHandler = () => {
         if (!listInput.current.value.trim()) {
             alert(emptyAddError);
