@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './List.css';
 
 const List = ({
-    headerTitle = 'My List',
+    initialHeaderTitle = 'My List',
     placeholderText = 'Enter a value...',
     buttonText = "Add to List",
     clearButtonText = 'Clear List',
@@ -11,6 +11,8 @@ const List = ({
     description = 'This is your dynamic list.',
 }) => {
     const listInput = useRef(null);
+    const lastItemRef = useRef(null); // for last added item
+    const [headerTitle, setHeaderTitle] = useState(initialHeaderTitle); // for dynamic headerTitle
     const [listObject, setListObject] = useState({
         listEntries: [],
         listItems: [],
@@ -24,12 +26,20 @@ const List = ({
         }
 
         const currentListEntries = [...listObject.listEntries, listInput.current.value];
+
+        // assign and highlight last item
         const currentListItems = currentListEntries.map((entry, index) => (
-            <li key={index}>{entry}</li>
+            <li key={index} ref={index === currentListEntries.length - 1 ? lastItemRef : null} style={index === currentListEntries.length - 1 ? {backgroundColor: '#333333' } : null}>
+                {entry}
+            </li>
         ));
+
         setListObject({ listEntries: currentListEntries, listItems: currentListItems });
         listInput.current.value = '';
         listInput.current.focus();
+
+        // update headerTitle to display the number of list entries
+        setHeaderTitle('My List: ' + currentListEntries.length + ' Items');
     };
 
     const clearListHandler = () => {
@@ -42,6 +52,9 @@ const List = ({
         setListObject({ listEntries: [], listItems: [] });
         listInput.current.value = ''
         listInput.current.focus();
+
+        // revert headerTitle back to original value
+        setHeaderTitle(initialHeaderTitle)
     };
 
     return (
