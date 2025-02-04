@@ -7,10 +7,12 @@ import Goals from './Goals';
 import PersonalInfo from './PersonalInfo';
 import Education from './Education';
 import Hobbies from './Hobbies';
+import { HobbiesProvider } from './HobbiesContext';
 
 function App() {
   return (
-    <div className="App">
+    <HobbiesProvider>
+      <div className="App">
       <div>
         <PersonalInfo
           headerTitle="Personal Information"
@@ -22,10 +24,7 @@ function App() {
           headerTitle="Education"
           description="I am currently pursuing a degree in Web and Mobile Application Development at MCC."
         />
-        <Hobbies
-          headerTitle="Hobbies"
-          description="I enjoy playing guitar, golfing, and video games. In the future, I would like to explore hiking and climbing."
-        />
+        <Hobbies />
         <Goals
           suggestedEntry="Put a top goal here."
           buttonLabel="Add Goal"
@@ -36,6 +35,7 @@ function App() {
         <img src={logo} className="reactLogo" alt="logo" />
       </header>
     </div>
+    </HobbiesProvider>
   );
 }
 
