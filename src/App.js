@@ -1,15 +1,15 @@
-import logo from './logo.svg';
-import logoINFO from './logoINFO.png';
-import './App.css';
+import React from 'react';
+import { TaskProvider } from './TaskContext';
+import TaskList from './TaskList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logoINFO} className="infoLogo" alt="xlogo" />
-        <img src={logo} className="reactLogo" alt="logo" />
-      </header>
-    </div>
+    <TaskProvider>
+      <div style={{ margin: '20px' }}>
+        <h1>Task-Flow | A Smart Task Manager</h1>
+        <TaskList />
+      </div>
+    </TaskProvider>
   );
 }
 
